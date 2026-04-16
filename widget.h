@@ -3,6 +3,9 @@
 
 #include <QWidget>
 #include <fsmpLed.h>
+#include <fsmpBeeper.h>
+#include <fsmpFan.h>
+#include <fsmpEvents.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -19,8 +22,25 @@ public:
 private slots:
     void on_pushButton_clicked();
 
-private:
+    void on_checkBox_stateChanged(int arg1);
+
+    void on_checkBox_2_stateChanged(int arg1);
+
+    void on_horizontalSlider_valueChanged(int value);
+
+    void on_checkBox_3_stateChanged(int arg1);
+
+    void pushbuton(int num);
+
+    void on_checkBox_4_stateChanged(int arg1);
+
+    void on_checkBox_5_stateChanged(int arg1);
+
+    private:
     Ui::Widget *ui;
     fsmpLeds myled;
+    fsmpBeeper mybeeper;
+    fsmpFan myfan;
+    fsmpEvents myevent;
 };
 #endif // WIDGET_H
